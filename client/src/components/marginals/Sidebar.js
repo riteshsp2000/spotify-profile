@@ -9,7 +9,9 @@ export default function MiniDrawer({ children }) {
   return (
     <div className={classes.root}>
       <div className={classes.container}>
-        <img className={classes.logo} src='/favicon.png' alt='spotify logo' />
+        <Link className={classes.logoContainer} to='/'>
+          <img className={classes.logo} src='/favicon.png' alt='spotify logo' />
+        </Link>
 
         <Link
           className={
@@ -61,6 +63,13 @@ export default function MiniDrawer({ children }) {
           <i className={`${classes.icon} fas fa-2x fa-play`} />
           <h3 className={classes.menuName}>Playlist</h3>
         </Link>
+
+        <a
+          className={classes.github}
+          href='https://github.com/riteshsp2000/spotify-profile'
+        >
+          <i className={`${classes.icon} fab fa-3x fa-github`} />
+        </a>
       </div>
     </div>
   );
@@ -96,6 +105,11 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: 'row',
       justifyContent: 'space-around',
     },
+  },
+  logoContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   logo: {
     width: '50%',
@@ -138,5 +152,14 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 5,
     marginBottom: 0,
     fontFamily: "'Montserrat', sans-serif",
+  },
+  github: {
+    width: '100%',
+    height: '80px',
+    position: 'absolute',
+    bottom: 0,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 }));
