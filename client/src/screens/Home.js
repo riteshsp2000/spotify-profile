@@ -1,16 +1,12 @@
 import React from 'react';
 
+import Template from '../components/shared/template';
+
 function Home() {
   return (
-    <div
-      style={{
-        marginLeft: '100px',
-        // width: 'calc(100% - 100px)',
-        height: '100vh',
-      }}
-    >
+    <Template>
       <h1 style={{ color: '#fff' }}>Hello</h1>
-    </div>
+    </Template>
   );
 }
 
