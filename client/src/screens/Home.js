@@ -2,6 +2,7 @@ import React from 'react';
 
 import Template from '../components/shared/template';
 import ArtistTile from '../components/artists/Tile';
+import ArtistWidget from '../components/artists/Widget';
 import TrackTile from '../components/tracks/Tile';
 
 import artist from '../assets/img/artist.jpeg';
@@ -61,6 +62,36 @@ function Home() {
           trackName='The Battle of the Pelennor Fields'
           albumName='The Lord of the Rings'
           artistName='Howard Shore'
+        />
+      </div>
+
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'space-around',
+          alignItems: 'space-around',
+        }}
+      >
+        <ArtistWidget
+          image={artist}
+          imageAlt='Howard Shore'
+          name='Howard Shore'
+        />
+        <ArtistWidget
+          image={artist}
+          imageAlt='Howard Shore'
+          name='Howard Shore'
+        />
+        <ArtistWidget
+          image={artist}
+          imageAlt='Howard Shore'
+          name='Howard Shore'
+        />
+        <ArtistWidget
+          image={artist}
+          imageAlt='Howard Shore'
+          name='Howard Shore'
         />
       </div>
     </Template>
