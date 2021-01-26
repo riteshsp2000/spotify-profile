@@ -8,9 +8,15 @@ import TrackTile from '../components/tracks/Tile';
 import artist from '../assets/img/artist.jpeg';
 import track from '../assets/img/track.jpeg';
 
+const LOGIN_URI =
+  process.env.NODE_ENV !== 'production'
+    ? 'http://localhost:8888/login'
+    : 'https://spotify-profile.herokuapp.com/login';
+
 function Home() {
   return (
     <Template>
+      <a href={LOGIN_URI}>Login</a>
       <h1 style={{ color: '#fff', margin: 20 }}>Hello</h1>
       <div style={{ margin: 20, width: '50%' }}>
         <ArtistTile
