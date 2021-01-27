@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core';
 
 // Utils
 import createBrowserHistory from '../utils/history';
-import { token as Token } from '../utils/api';
+import { token as Token, getUser, getTopTracksShort } from '../utils/api';
 
 // Components
 import Login from './Login';
@@ -19,6 +19,11 @@ function App() {
 
   useEffect(() => {
     setToken(Token);
+    const getData = async () => {
+      const { data } = await getTopTracksShort();
+      console.log(data);
+    };
+    getData();
   }, []);
 
   return (
