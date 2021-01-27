@@ -10,7 +10,7 @@ import track from '../assets/img/track.jpeg';
 
 const LOGIN_URI =
   process.env.NODE_ENV !== 'production'
-    ? 'http://localhost:8888/login'
+    ? 'http://localhost:8000/login'
     : 'https://spotify-profile.herokuapp.com/login';
 
 function Home() {

@@ -50,6 +50,8 @@ const app = express();
  * 4. history - A sort of proxy which redirects  requests made to localhost:3000 (specified routes) to localhost:4000
  * 3000 the client side is running, 8000 server is running.
  */
+app.use(express.static(path.resolve(__dirname, '../client/build')));
+
 app
   .use(express.static(path.resolve(__dirname, '../client/build')))
   .use(cors())
@@ -63,7 +65,8 @@ app
         { from: /\refrest_token/, to: '/refresh_token' },
       ],
     })
-  );
+  )
+  .use(express.static(path.resolve(__dirname, '../client/build')));
 
 // Routes
 // Redirect to index.html since routing is handled by the client
@@ -96,6 +99,7 @@ app.get('/callback', function (req, res) {
   // your application requests refresh and access tokens
   // after checking the state parameter
 
+  console.log('================================================ redirected');
   const code = req.query.code || null;
   const state = req.query.state || null;
   const storedState = req.cookies ? req.cookies[STATEKEY] : null;
@@ -132,7 +136,11 @@ app.get('/callback', function (req, res) {
           })}`
         );
       } else {
-        res.redirect(`/#${querystring.stringify({ error: 'invalid_token' })}`);
+        res.redirect(
+          `http://localhost:3000/#${querystring.stringify({
+            error: 'invalid_token',
+          })}`
+        );
       }
     });
   }
