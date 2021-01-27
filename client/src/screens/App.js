@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core';
 
 // Utils
 import createBrowserHistory from '../utils/history';
-import { token as Token, getUser, getTopTracksShort } from '../utils/api';
+import { token as Token, getTopTracksShort } from '../utils/api';
 
 // Components
 import Login from './Login';
