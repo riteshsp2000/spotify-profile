@@ -38,7 +38,12 @@ const refreshAccessToken = async () => {
 
 // Get access token off of query params (called on application init)
 export const getAccessToken = () => {
-  const { access_token, refresh_token } = getHashParams();
+  const { access_token, refresh_token, error } = getHashParams();
+
+  if (error) {
+    console.error(error);
+    refreshAccessToken();
+  }
 
   // If token has expired
   if (Date.now() - getTokenTimestamp() > EXPIRATION_TIME) {
