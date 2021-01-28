@@ -6,7 +6,7 @@
     "start_url": "/",
     "app_name": "Spotify Profile",
     "short_name": "Spotify Profile",
-    "description": "Get a detailed analysis of your spotify profile.",
+    "description": "Get a detailed analysis of your spotify profile",
     "icons": [
         {
             "src": "/favicon.png",

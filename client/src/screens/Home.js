@@ -8,9 +8,18 @@ import TrackTile from '../components/tracks/Tile';
 import artist from '../assets/img/artist.jpeg';
 import track from '../assets/img/track.jpeg';
 
+import { logout } from '../utils/api';
+
+const LOGOUT_URI =
+  process.env.NODE_ENV !== 'production'
+    ? 'http://localhost:8000/logout'
+    : 'https://spotify-profile.herokuapp.com/logout';
+
 function Home() {
   return (
     <Template>
+      {/* <a href={LOGOUT_URI}>LOGOUT</a> */}
+      <button onClick={logout}>Logout</button>
       <h1 style={{ color: '#fff', margin: 20 }}>Hello</h1>
       <div style={{ margin: 20, width: '50%' }}>
         <ArtistTile
